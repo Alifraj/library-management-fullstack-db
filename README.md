@@ -21,3 +21,12 @@ library-management-fullstack-db/
 ├── backend/          # API serveur, logique métier et connexion à la base de données
 ├── frontend/         # Interface utilisateur interactive
 └── README.md         # Documentation du projet
+
+🛠️ Technologies Utilisées
+Frontend : HTML5, CSS3, JavaScript / React (à adapter selon votre stack)
+
+Backend : Node.js / Express (ou Python / PHP selon l'implémentation)
+
+Base de Données : SQL (MySQL / PostgreSQL)
+
+Outils : Git, GitHub, VS Code
