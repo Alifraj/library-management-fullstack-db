@@ -1,0 +1,70 @@
+/* frontend/src/styles/Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2c3e50;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+.admin-menu {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background-color: #34495e;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.admin-label {
+    font-size: 0.8rem;
+    color: #f1c40f; /* Jaune pour admin */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.admin-link {
+    font-size: 0.9rem;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn-nav {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}

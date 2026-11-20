@@ -1,0 +1,87 @@
+/* ---- CONTAINER ---- */
+.getstarted-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* ---- ANIMATION ---- */
+.gs-animation {
+    animation: popIn 0.9s ease-out forwards;
+    transform: scale(0.4);
+    margin-bottom: 10px;
+}
+
+/* ---- TITRE ---- */
+.gs-title {
+    font-size: 32px;
+    color: white;
+    font-weight: 800;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    animation: slideUp 0.9s ease-out;
+}
+
+/* ---- SOUS-TITRE ---- */
+.gs-subtitle {
+    font-size: 18px;
+    color: #e5e5e5;
+    margin-top: 10px;
+    padding: 0 25px;
+    animation: fadeText 1.2s ease-in-out;
+}
+
+/* ---- BOUTON ---- */
+.gs-button {
+    margin-top: 35px;
+    background: white;
+    color: #4f46e5;
+    padding: 14px 40px;
+    border-radius: 28px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.25s ease;
+    animation: popInBtn 1s ease-out;
+}
+
+.gs-button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(1.02); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.4); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes popInBtn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,233 @@
+/* frontend/src/styles/MyLoans.css */
+
+/* --- Conteneur Principal --- */
+.loans-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loans-wrapper {
+  max-width: 900px; /* Plus étroit pour une lecture facile en liste */
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.loans-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.loans-header h1 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.loans-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+/* --- Notifications --- */
+.msg-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+.msg-success { background-color: #10b981; }
+.msg-error { background-color: #ef4444; }
+
+@keyframes slideIn {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Liste des Emprunts --- */
+.loans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Carte Emprunt (Style "Ticket") */
+.loan-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 15px rgba(0,0,0,0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+}
+
+.loan-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* Bordure colorée à gauche selon le statut */
+.loan-card.active {
+  border-left: 6px solid #3b82f6; /* Bleu pour en cours */
+}
+
+.loan-card.returned {
+  border-left: 6px solid #10b981; /* Vert pour rendu */
+  background-color: #f8fafc; /* Fond légèrement grisé */
+  opacity: 0.8;
+}
+
+/* Image du livre */
+.loan-book-cover {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+/* Informations */
+.loan-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loan-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #1e293b;
+}
+
+.loan-dates {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5px 15px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.date-label {
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.date-value {
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Badges de statut */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.status-badge.active {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.status-badge.returned {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+/* Bouton Retourner */
+.btn-return {
+  padding: 10px 20px;
+  background-color: #f59e0b; /* Ambre/Orange */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2);
+}
+
+.btn-return:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* État Vide */
+.empty-state {
+  text-align: center;
+  padding: 4rem;
+  background: white;
+  border-radius: 16px;
+  color: #94a3b8;
+  font-size: 1.2rem;
+  border: 2px dashed #e2e8f0;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #64748b;
+}
+
+/* --- Responsive Mobile --- */
+@media (max-width: 640px) {
+  .loan-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .loan-book-cover {
+    width: 100px;
+    height: 150px;
+    align-self: center;
+  }
+
+  .loan-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .loan-dates {
+    justify-content: center;
+    text-align: left;
+    display: inline-grid; /* Pour garder l'alignement label/value */
+  }
+  
+  .status-badge {
+    margin: 0 auto; /* Centrer le badge */
+  }
+
+  .btn-return {
+    width: 100%;
+  }
+}
